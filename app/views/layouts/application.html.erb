@@ -3,11 +3,14 @@
   <head>
     <title>AngAuth</title>
     <%= csrf_meta_tags %>
-
+    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body ng-app='app'>
+    <div class="container">
+      <ui-view></ui-view>
+    </div>
   </body>
+
 </html>
