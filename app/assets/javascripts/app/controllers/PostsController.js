@@ -1,9 +1,12 @@
-function PostsController(posts) {
+function PostsController(Auth, posts) {
   var ctrl = this;
+  ctrl.posts = posts.data;
 
-  ctrl.posts = posts.data
-  
-
+  Auth.currentUser()
+    .then(function(user) {
+      ctrl.user = user;
+      debugger;
+    });
 }
 
 angular
